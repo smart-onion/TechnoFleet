@@ -1,28 +1,35 @@
 .backImage{
     transition-duration: 0.5s;
     filter: blur(1px);
-    animation-name: appear;
-    animation-duration: 4s;
+    animation-name: appearPhoto;
+    animation-duration: 3s;
 }
 .backImage:hover{
+    transition-duration: 0.5s;
     transform: scale(1.02);
     z-index: 1000;
     filter: blur(0px);
 
 }
 .goBack{
-    transition-duration: 0.5s;
+    transition-duration: 1s;
     transform: translate(-3em, 3em);
     filter: blur(5px);
 }
+.appear{
+    animation-name: appearPhoto;
+    animation-duration: 3s;
+}
 .goForward{
     transition-duration: 0.5s;
-    animation-name: appear;
-    animation-duration: 4s;
 }
 .homeText1{
     animation-name: appear;
     animation-duration: 4s;
+}
+@keyframes appearPhoto{
+    from{opacity: 0;}
+    to{opacity: 1;}
 }
 @keyframes appear {
     0%{opacity: 0;
@@ -41,5 +48,7 @@
     0%{opacity: 0;
         transform: translate(5em);
     }
-    100%{opacity: 1;}
+    100%{opacity: 1;
+        transform: translate(0em);
+    }
 }

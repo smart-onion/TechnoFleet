@@ -2,28 +2,16 @@ import {Box, Grid, GridItem, Heading, Image, Text} from "@chakra-ui/react";
 import {ServicePreviewCard} from "@/components/ServicePreviewCard.tsx";
 import {useInView} from "react-intersection-observer";
 import {useState} from "react";
-import { FaPeopleRoof } from "react-icons/fa6";
-import { PiCertificateBold } from "react-icons/pi";
+import {servicesDescription} from "@/components/data/servicesDescription.ts";
 import "./Home.css"
 
-const servicesDescription= [
-    {
-        Icon: FaPeopleRoof,
-        heading: "Crewing",
-        text: "Professional crew recruitment and management for safe and efficient operations."
-    },
-    {
-        Icon: PiCertificateBold,
-        heading: "Certificates",
-        text: "Handling maritime documentation and compliance with international standards.",
-    }
-]
 
 export function Home() {
     const [isHover, setHover] = useState(false);
     const [servicesView, inServicesView] = useInView();
     return (<>
-        <Box position={"relative"} justifyItems={"center"}>
+        <Box position={"relative"} justifyItems={"center"} colorPalette={"white"}>
+
             <Grid   templateColumns={"repeat(2,1fr)"}
                     gap={6}
                     marginBottom={40}
@@ -54,14 +42,14 @@ export function Home() {
                                width={"30em"}
                                position={"absolute"}
                                top={"80"}
-                               className={isHover ? "goBack" : "goForward"}
+                               className={`${isHover ? "goBack" : "goForward"} appear`}
                         />
                     </Box>
                 </GridItem>
             </Grid
             >
             <Grid   ref={servicesView}
-                    templateColumns={"repeat(7,1fr)"}
+                    templateColumns={"repeat(6,1fr)"}
                     gap={6}
                     className={inServicesView ? "inServicesView" : ""}
             >
@@ -75,18 +63,14 @@ export function Home() {
                 </GridItem>
                 {servicesDescription.map((service, index) => (
                     <GridItem colSpan={2}>
-                        <ServicePreviewCard MyIcon={service.Icon}
+
+                        <ServicePreviewCard key={index}
+                            MyIcon={service.Icon}
                                             heading={service.heading}
                                             text={service.text}
                         />
                     </GridItem>
                 ))}
-
-                <GridItem colSpan={2} backgroundColor={"red"}>asdasdasdasdasda</GridItem>
-                <GridItem colSpan={2} backgroundColor={"red"}>a</GridItem>
-                <GridItem colSpan={2} backgroundColor={"red"}>a</GridItem>
-                <GridItem colSpan={2} backgroundColor={"red"}>a</GridItem>
-                <GridItem colSpan={2} backgroundColor={"red"}>a</GridItem>
             </Grid>
         </Box>
     </>)

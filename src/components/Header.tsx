@@ -1,4 +1,4 @@
-import {Button, HStack, Menu, Heading, Separator, Link as ChakraLink} from "@chakra-ui/react";
+import {Button, HStack, Menu, Heading, Separator, Link as ChakraLink, Box} from "@chakra-ui/react";
 import {Image} from "@chakra-ui/react";
 import {Link, NavLink} from "react-router";
 import { IoIosArrowDown } from "react-icons/io";
@@ -15,11 +15,11 @@ export function Header(){
         "Yachts"
     ]
 
-    return (<>
+    return (<Box position={"sticky"} top={0} backgroundColor={"white"} zIndex={999}>
         <HStack width={"80%"} margin={"auto"} backgroundColor={""} align={"center"}>
             <NavLink to={"/"}>
                 <HStack>
-                    <Image src="/technofleet.png" width={40} />
+                    <Image src="/technofleet.png" width={20} />
                     <ChakraLink><Heading size={"2xl"} color={"blue.300"}>TechnoFleet</Heading></ChakraLink>
                 </HStack>
             </NavLink>
@@ -75,5 +75,5 @@ export function Header(){
             </HStack>
         </HStack>
         <Separator size={"lg"}/>
-    </>);
+    </Box>);
 }
