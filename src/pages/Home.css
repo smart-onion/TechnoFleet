@@ -1,0 +1,45 @@
+.backImage{
+    transition-duration: 0.5s;
+    filter: blur(1px);
+    animation-name: appear;
+    animation-duration: 4s;
+}
+.backImage:hover{
+    transform: scale(1.02);
+    z-index: 1000;
+    filter: blur(0px);
+
+}
+.goBack{
+    transition-duration: 0.5s;
+    transform: translate(-3em, 3em);
+    filter: blur(5px);
+}
+.goForward{
+    transition-duration: 0.5s;
+    animation-name: appear;
+    animation-duration: 4s;
+}
+.homeText1{
+    animation-name: appear;
+    animation-duration: 4s;
+}
+@keyframes appear {
+    0%{opacity: 0;
+        transform: translate(-5em);
+    }
+    100%{opacity: 1;
+    transform: translateX(0em);}
+}
+
+.inServicesView{
+    animation-name: servicesView;
+    animation-duration: 2s;
+}
+
+@keyframes servicesView {
+    0%{opacity: 0;
+        transform: translate(5em);
+    }
+    100%{opacity: 1;}
+}
