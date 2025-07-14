@@ -25,7 +25,7 @@ export function MobileHeader({pages}: {pages: string[]}) {
                     </Drawer.Trigger>
                     <Drawer.Positioner p={4}>
                         <Drawer.Content rounded={"md"} backgroundColor={"gray.100"}>
-                            <Drawer.CloseTrigger>
+                            <Drawer.CloseTrigger asChild>
                                 <IconButton variant="outline">
                                     <IoClose/>
                                 </IconButton>

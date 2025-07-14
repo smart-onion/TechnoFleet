@@ -1,7 +1,9 @@
 *{
 }
 
-#root{
-    width: 80%;
-    margin: auto;
+@media screen and (width >= 48em){
+    #root{
+        width: 80%;
+        margin: auto;
+    }
 }

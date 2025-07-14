@@ -10,7 +10,7 @@ return (
     >
         <Center>
             <Box rounded={"full"} backgroundColor={"gray.200"} padding={10}>
-                <MyIcon size={"sm"}></MyIcon>
+                    <MyIcon size={"10em"}></MyIcon>
             </Box>
         </Center>
         <Heading size={"4xl"}>{heading}</Heading>
