@@ -10,14 +10,18 @@ export function Home() {
     const [isHover, setHover] = useState(false);
     const [servicesView, inServicesView] = useInView();
     return (<>
-        <Box position={"relative"} justifyItems={"center"} colorPalette={"white"}>
+        <Box position={"relative"} justifyItems={"center"} colorPalette={"white"} >
 
-            <Grid   templateColumns={"repeat(2,1fr)"}
+            <Grid   templateColumns={{base:"repeat(1,1fr)", md:"repeat(2,1fr)"}}
                     gap={6}
                     marginBottom={40}
             >
                 <GridItem colSpan={1}>
-                    <Box paddingTop={200} backgroundColor={""} height={"full"} className={"homeText1"}>
+                    <Image
+                        display={{base: "block", md: "none"}}
+                        src={"/ship-photos/ship-container-terminal.jpg"}
+                    />
+                    <Box paddingTop={{base:10,md:200}} backgroundColor={""} height={"full"} className={"homeText1"}>
                     <Heading size={"4xl"}>Your Global Partner in Maritime Crewing</Heading>
                     <Text width={"80%"} marginTop={"2em"}>Connecting top-tier seafarers with leading
                         shipping companies across the world — efficiently,
@@ -29,8 +33,8 @@ export function Home() {
                     <Box position={"relative"} height={"full"} >
                         <Image src={"/ship-photos/ship-top.jpg"}
                                rounded="md"
-                               width={"30em"}
-                               position={"inherit"}
+                               width={"lg"}
+                               position={{base: "center", md: "inherit"}}
                                top={"10"}
                                left={"40%"}
                                className={"backImage"}

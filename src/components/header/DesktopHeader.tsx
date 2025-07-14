@@ -1,22 +1,15 @@
-import {Button, HStack, Menu, Heading, Separator, Link as ChakraLink, Box} from "@chakra-ui/react";
-import {Image} from "@chakra-ui/react";
+import {Box, Button, Heading, HStack, Image, Menu, Separator} from "@chakra-ui/react";
 import {Link, NavLink} from "react-router";
-import { IoIosArrowDown } from "react-icons/io";
+import {Link as ChakraLink} from "@chakra-ui/react";
+import {IoIosArrowDown} from "react-icons/io";
 import {useState} from "react";
-export function Header(){
+
+export function DesktopHeader({services}: {services: string[]}) {
     const [service, setService] = useState("Services");
 
-    const services = [
-        "Crewing",
-        "Certificates",
-        "Supply",
-        "Insurance",
-        "IT Service",
-        "Yachts"
-    ]
-
-    return (<Box position={"sticky"} top={0} backgroundColor={"white"} zIndex={999}>
-        <HStack width={"80%"} margin={"auto"} backgroundColor={""} align={"center"}>
+    return(
+    <Box display={{base:"none", md: "block"}}>
+        <HStack margin={"auto"} align={"center"}>
             <NavLink to={"/"}>
                 <HStack>
                     <Image src="/technofleet.png" width={20} />
@@ -75,5 +68,6 @@ export function Header(){
             </HStack>
         </HStack>
         <Separator size={"lg"}/>
-    </Box>);
+    </Box>
+)
 }
