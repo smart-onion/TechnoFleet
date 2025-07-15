@@ -31,8 +31,11 @@ export function Home() {
                     left={0}
                     right={0}
                     zIndex={-1}
-                    filter="blur(3px)"
+                    filter="blur(8px)"
                     backgroundImage={"url(/bg-sea.jpg)"}
+                    backgroundSize="cover"
+                    backgroundPosition="center"
+                    backgroundRepeat="no-repeat"
                 />
                 <GridItem colSpan={1} maxW={{base: "fit", md: "2xl"}} >
                     <Box paddingX={10} paddingTop={{base:10,md:200}} backgroundColor={""} height={"full"} className={"homeText1"}>
@@ -53,7 +56,7 @@ export function Home() {
                             position={"relative"}
                             height={"full"} >
                             <Image src={"/ship-photos/ship-top.jpg"}
-                                   rounded="md"
+                                   rounded={{base: "",md:"md"}}
                                    width={{base: "md", md: "md", lg: "lg"}}
                                    position={{base: "center", md: "inherit"}}
                                    top={"10"}
@@ -64,7 +67,7 @@ export function Home() {
                         />
                         <Image src={"/ship-photos/tanker.jpg"}
                                display={{base: "none", md: "block"}}
-                               rounded="md"
+                               rounded={{base: "",md:"md"}}
                                width={"30em"}
                                position={"absolute"}
                                top={"80"}
@@ -85,11 +88,11 @@ export function Home() {
                     marginTop={{base:0, md:60}}
             >
                 <GridItem colSpan={{base: 1, md:6}}>
-                    <Heading textAlign={"center"} size={{base: "4xl", md:"6xl"}} marginBottom={"2%"}>Our Services at a Glance</Heading>
+                    <Heading textAlign={"center"} size={{base: "2xl", md:"6xl"}} marginBottom={"2%"}>Our Services at a Glance</Heading>
                     <Text textAlign={"center"}
                           margin={"auto"}
                           width={{base: "sm", md:"6xl"}}
-                            fontSize={{base: "md", md:"2xl"}}
+                            fontSize={{base: "xs", md:"2xl"}}
                     >
                         We offer a comprehensive range of maritime services designed to support vessels, crew, and
                         operations worldwide. From crewing and certification to IT and yacht management, our solutions
