@@ -3,7 +3,6 @@ import {
     Button,
     Center,
     Drawer,
-    Heading,
     HStack,
     IconButton,
     Image,
@@ -12,6 +11,7 @@ import {
 } from "@chakra-ui/react";
 import { IoMenu,IoClose  } from "react-icons/io5";
 import {Link} from "react-router";
+import {TechnoFleetHeader} from "@/components/TechnoFleetHeader.tsx";
 export function MobileHeader({pages}: {pages: string[]}) {
     return (
         <Box display={{base: "block" , md:"none"}}>
@@ -50,9 +50,9 @@ export function MobileHeader({pages}: {pages: string[]}) {
                     </Drawer.Positioner>
                 </Drawer.Root>
                 <HStack align={"center"}>
-                    <Heading color={"blue.300"}>
-                        <Link to={"/"}>Techno Fleet</Link>
-                    </Heading>
+                        <Link to={"/"}>
+                            <TechnoFleetHeader size={"xl"}/>
+                        </Link>
                     <Image src={"/technofleet.png"} height={"20"}/>
                 </HStack>
             </HStack>

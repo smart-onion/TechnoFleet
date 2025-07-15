@@ -3,7 +3,7 @@ import {Outlet} from "react-router";
 import {Box} from "@chakra-ui/react";
 
 export function Layout(){
-    return <Box overflowX="hidden">
+    return <Box overflowX={{base:"hidden", md: "initial"}}>
         <Header/>
         <Outlet/>
     </Box>

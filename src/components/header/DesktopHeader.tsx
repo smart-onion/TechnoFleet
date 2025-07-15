@@ -1,7 +1,8 @@
-import {Box, Button, Heading, HStack, Image, Menu, Separator} from "@chakra-ui/react";
+import {Box, Button, HStack, Image, Menu, Separator} from "@chakra-ui/react";
 import {Link, NavLink} from "react-router";
 import {IoIosArrowDown} from "react-icons/io";
 import {useState} from "react";
+import {TechnoFleetHeader} from "@/components/TechnoFleetHeader.tsx";
 
 export function DesktopHeader({services}: {services: string[]}) {
     const [service, setService] = useState("Services");
@@ -10,9 +11,9 @@ export function DesktopHeader({services}: {services: string[]}) {
     <Box display={{base:"none", md: "block"}}>
         <HStack margin={"auto"} align={"center"} px={40}>
             <NavLink to={"/"}>
-                <HStack>
+                <HStack width={"xs"}>
                     <Image src="/technofleet.png" width={20} />
-                    <Heading size={"2xl"} color={"blue.300"}>TechnoFleet</Heading>
+                    <TechnoFleetHeader size={"2xl"}/>
                 </HStack>
             </NavLink>
 

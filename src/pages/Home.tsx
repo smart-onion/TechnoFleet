@@ -10,7 +10,7 @@ import "./Home.css"
 export function Home() {
     const [isHover, setHover] = useState(false);
     const [servicesView, inServicesView] = useInView({
-        triggerOnce: false,
+        triggerOnce: true,
     });
     return (<>
         <Box position={"relative"} justifyItems={"center"} colorPalette={"white"} >
@@ -36,16 +36,16 @@ export function Home() {
                 />
                 <GridItem colSpan={1} maxW={{base: "fit", md: "2xl"}} >
                     <Box paddingX={10} paddingTop={{base:10,md:200}} backgroundColor={""} height={"full"} className={"homeText1"}>
-                    <Heading size={"6xl"}
-
-                    >Your Global Partner in Maritime Crewing</Heading>
-                    <Text  width={{base: "xs", md: "2xl"}}
-                           fontSize={"xl"}
-                           marginTop={"2em"}
-                    >Connecting top-tier seafarers with leading
-                        shipping companies across the world — efficiently,
-                        compliantly, and with care.
-                    </Text>
+                        <Heading size={"6xl"}>
+                            Your Global Partner in Maritime Crewing</Heading>
+                        <Text  width={{base: "xs", md: "2xl"}}
+                               fontSize={"xl"}
+                               marginTop={"2em"}
+                        >
+                            Connecting top-tier seafarers with leading
+                            shipping companies across the world — efficiently,
+                            compliantly, and with care.
+                        </Text>
                     </Box>
                         </GridItem>
                         <GridItem colSpan={1}>
@@ -57,7 +57,7 @@ export function Home() {
                                    width={{base: "md", md: "md", lg: "lg"}}
                                    position={{base: "center", md: "inherit"}}
                                    top={"10"}
-                               left={"40%"}
+                               left={"30%"}
                                className={"backImage"}
                                onMouseOver={() => setHover(true)}
                                onMouseLeave={() => setHover(false)}
