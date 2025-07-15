@@ -2,7 +2,6 @@ import {Box, Grid, GridItem, Heading, Image, Text} from "@chakra-ui/react";
 import {ServicePreviewCard} from "@/components/ServicePreviewCard.tsx";
 import {useInView} from "react-intersection-observer";
 import {useState} from "react";
-import {MotionBox} from "@/components/MotionBox.tsx";
 import {servicesDescription} from "@/components/data/servicesDescription.ts";
 import "./Home.css"
 
@@ -40,7 +39,7 @@ export function Home() {
                     <Heading size={"6xl"}
 
                     >Your Global Partner in Maritime Crewing</Heading>
-                    <Text  width={{base: "sm", md: "2xl"}}
+                    <Text  width={{base: "xs", md: "2xl"}}
                            fontSize={"xl"}
                            marginTop={"2em"}
                     >Connecting top-tier seafarers with leading
@@ -101,20 +100,12 @@ export function Home() {
                     <GridItem
                         colSpan={{base: 1, md:2}}
                         key={index} marginTop={20}>
-                        <MotionBox
-                            initial={{scale:0}}
-                            animate={{
-                                scale: 1,
-                                transition: { duration: 1 }
-                            }}
-                        >
+
                         <ServicePreviewCard
                             MyIcon={service.Icon}
                                             heading={service.heading}
                                             text={service.text}
                         />
-                        </MotionBox>
-
                     </GridItem>
                 ))}
             </Grid>
