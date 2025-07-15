@@ -6,7 +6,9 @@ export function MobileFooter(props?: StackProps) {
         <VStack {...props} pt={32}>
             <InnerFooter/>
             <Separator size={"lg"}/>
-            <Link href={"/Privacy"}>Privacy Policy</Link>
+            <VStack>
+                <Link href={"/Privacy"}>© 2025-TechnoFleet Privacy</Link>
+            </VStack>
         </VStack>
     )
 }

@@ -42,7 +42,7 @@ export function Footer(){
                     paddingTop={{base:14, md:5}}
 
                 >
-                    Subscribe to our newsletter to get updated to our latest jobs
+                    Subscribe to our newsletter to get updated to our latest offers
                 </Heading>
                 <VStack
                     right={0}
@@ -61,10 +61,13 @@ export function Footer(){
                     <Input
                         placeholder={"Enter your email"}
                         w={{base: "", md:"xs"}}
+                        borderColor={"gray.500"}
 
                     />
                     <Button colorPalette={"white"}
                             variant="surface"
+                            borderColor={"gray.500"}
+
                     >
                         Subscribe
                     </Button>

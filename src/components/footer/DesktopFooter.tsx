@@ -1,10 +1,9 @@
 import {
     Box,
     HStack,
-    Text,
     Separator,
     Link,
-    type BoxProps
+    type BoxProps, Span
 } from "@chakra-ui/react";
 import {InnerFooter} from "@/components/footer/InnerFooter.tsx";
 
@@ -25,8 +24,7 @@ export function DesktopFooter(props?: BoxProps) {
             </HStack>
             <Separator size={"lg"}/>
             <HStack px={"60"} justify={"space-between"}>
-                <Text>@</Text>
-                <Link href={"/Privacy"}>Privacy Policy</Link>
+                <Link href={"/Privacy"}>© 2025-TechnoFleet <Span color={"blue"}>Privacy</Span></Link>
             </HStack>
         </Box>
     )

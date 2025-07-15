@@ -1,10 +1,9 @@
-import {Heading, type HeadingProps, HStack} from "@chakra-ui/react";
+import {Heading, type HeadingProps, HStack, Span} from "@chakra-ui/react";
 
 export function TechnoFleetHeader(props:HeadingProps) {
     return (
         <HStack>
-            <Heading {...props} color={"blue.700"}>Techno</Heading>
-            <Heading {...props}  color={"blue.400"}>Fleet</Heading>
+            <Heading {...props} color={"blue.700"}>Techno<Span color={"blue.300"}>Fleet</Span></Heading>
         </HStack>
 
     )
