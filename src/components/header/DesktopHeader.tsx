@@ -8,7 +8,7 @@ export function DesktopHeader({services}: {services: string[]}) {
 
     return(
     <Box display={{base:"none", md: "block"}}>
-        <HStack margin={"auto"} align={"center"}>
+        <HStack margin={"auto"} align={"center"} px={40}>
             <NavLink to={"/"}>
                 <HStack>
                     <Image src="/technofleet.png" width={20} />
