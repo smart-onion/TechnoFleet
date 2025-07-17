@@ -1,13 +1,12 @@
-import {Accordion, Box, Heading, HStack, IconButton, Image, Separator, Text, VStack} from "@chakra-ui/react";
+import {Accordion, Heading, HStack, IconButton, Image, Separator, Text, VStack} from "@chakra-ui/react";
 import {TechnoFleetHeader} from "@/components/TechnoFleetHeader.tsx";
 import {FaInstagram, FaLinkedin, FaPhoneAlt, FaTelegramPlane} from "react-icons/fa";
-import {services} from "@/components/data/services.ts";
+import {services} from "@/data/services.ts";
 import {IoMdMail} from "react-icons/io";
 import {Link} from "react-router"
 export function InnerFooter(){
     return(
         <>
-            <Box/>
             <VStack>
                 <HStack>
                     <Link to={"/"}>

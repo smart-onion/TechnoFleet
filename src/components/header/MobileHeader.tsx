@@ -12,6 +12,9 @@ import {
 import { IoMenu,IoClose  } from "react-icons/io5";
 import {Link} from "react-router";
 import {TechnoFleetHeader} from "@/components/TechnoFleetHeader.tsx";
+import {bgColors} from "@/theme/main-colors.ts";
+import {ColorModeButton} from "@/components/ui/color-mode.tsx";
+
 export function MobileHeader({pages}: {pages: string[]}) {
     return (
         <Box display={{base: "block" , md:"none"}}>
@@ -24,7 +27,7 @@ export function MobileHeader({pages}: {pages: string[]}) {
                         </IconButton>
                     </Drawer.Trigger>
                     <Drawer.Positioner p={4}>
-                        <Drawer.Content rounded={"md"} backgroundColor={"gray.100"}>
+                        <Drawer.Content rounded={"md"} bg={bgColors.main}>
                             <Drawer.CloseTrigger asChild>
                                 <IconButton variant="outline">
                                     <IoClose/>
@@ -39,11 +42,11 @@ export function MobileHeader({pages}: {pages: string[]}) {
                                 {(store) =>(
                                     <Drawer.Body>
                                         {pages.map((page, index) => (
-                                            <Stack key={index}  backgroundColor={"gray.100"}>
+                                            <Stack key={index} bg={bgColors.main}>
                                                     <Button variant={"ghost"} onClick={() => store.setOpen(false)}>
                                                         <Link to={page}>{page}</Link>
                                                     </Button>
-                                                <Separator size={"sm"} />
+                                                <Separator size={"md"} />
                                             </Stack>
                                         ))}
                                     </Drawer.Body>
@@ -53,6 +56,7 @@ export function MobileHeader({pages}: {pages: string[]}) {
                         </Drawer.Content>
                     </Drawer.Positioner>
                 </Drawer.Root>
+                <ColorModeButton ml={-28}/>
                 <HStack align={"center"}>
                         <Link to={"/"}>
                             <TechnoFleetHeader size={"xl"}/>

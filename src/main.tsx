@@ -9,7 +9,7 @@ const App = lazy(() => import("./App.tsx"))
 createRoot(document.getElementById('root')!).render(
   <StrictMode>
       <BrowserRouter>
-          <Provider>
+          <Provider >
               <Suspense fallback={<Loading/>}>
                 <App />
               </Suspense>

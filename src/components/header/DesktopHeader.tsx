@@ -3,6 +3,7 @@ import {Link, NavLink} from "react-router";
 import {IoIosArrowDown} from "react-icons/io";
 import {useState} from "react";
 import {TechnoFleetHeader} from "@/components/TechnoFleetHeader.tsx";
+import {ColorModeButton} from "@/components/ui/color-mode.tsx";
 
 export function DesktopHeader({services}: {services: string[]}) {
     const [service, setService] = useState("Services");
@@ -68,7 +69,9 @@ export function DesktopHeader({services}: {services: string[]}) {
                     )}
                 </NavLink>
             </HStack>
+            <ColorModeButton/>
         </HStack>
+
         <Separator size={"lg"}/>
     </Box>
 )

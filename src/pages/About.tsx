@@ -4,7 +4,7 @@ import {CrewingCard} from "@/components/CrewingCard.tsx";
 
 export default function About() {
     return (
-        <Box overflow={"hidden"} backgroundColor={"blue.50"}>
+        <Box overflow={"hidden"}>
             <Box position={"relative"}
 
             >

@@ -6,16 +6,18 @@ import {
     type BoxProps, Span
 } from "@chakra-ui/react";
 import {InnerFooter} from "@/components/footer/InnerFooter.tsx";
+import {bgColors} from "@/theme/main-colors.ts";
 
 
 export function DesktopFooter(props?: BoxProps) {
     return (
         <Box
             {...props}
-            backgroundColor={"gray.100"}
+            bg={bgColors.main}
             width={"full"}
             alignContent={"start"}
             pt={20}
+            borderTop={"1px solid white"}
         >
             <HStack justify={"space-evenly"}
             align={"start"}

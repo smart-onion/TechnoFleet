@@ -2,7 +2,7 @@ import {Box, Grid, GridItem, Heading, Image, Text} from "@chakra-ui/react";
 import {ServicePreviewCard} from "@/components/ServicePreviewCard.tsx";
 import {useInView} from "react-intersection-observer";
 import {useState} from "react";
-import {servicesDescription} from "@/components/data/servicesDescription.ts";
+import {servicesDescription} from "@/data/servicesDescription.ts";
 import "./Home.css"
 
 
@@ -21,25 +21,21 @@ export function Home() {
                     position={"relative"}
                     width={{base:"fit", md:"full"}}
             >
-                <Box
-                    w={"full"}
-                    overlay={"hover"}
-                    className={"backImage"}
-                    position={"absolute"}
-                    bottom={0}
-                    top={0}
-                    left={0}
-                    right={0}
-                    zIndex={-1}
-                    filter="blur(8px)"
-                    backgroundImage={"url(/bg-sea.jpg)"}
-                    backgroundSize="cover"
-                    backgroundPosition="center"
-                    backgroundRepeat="no-repeat"
-                />
-                <GridItem colSpan={1} maxW={{base: "fit", md: "2xl"}} >
+                <Box position="absolute" top={0} left={0} right={0} bottom={0} zIndex={0} >
+                    <Image
+                        src="/bg-sea.jpg"
+                        alt="Background"
+                        w="100%"
+                        h="100%"
+                        objectFit="cover"
+                        filter="blur(5px) brightness(0.7)"
+                        brightness={"10%"}
+
+                    />
+                </Box>
+                <GridItem colSpan={1} maxW={{base: "fit", md: "2xl"}} zIndex={1}>
                     <Box paddingX={10} paddingTop={{base:10,md:200}} backgroundColor={""} height={"full"} className={"homeText1"}>
-                        <Heading size={"6xl"}>
+                        <Heading size={"6xl"} color={"whiteAlpha.900"}>
                             Your Global Partner in Maritime Crewing</Heading>
                         <Text  width={{base: "xs", md: "2xl"}}
                                fontSize={"xl"}
