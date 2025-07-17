@@ -35,16 +35,20 @@ export function MobileHeader({pages}: {pages: string[]}) {
                                     <Drawer.Title>Navigation</Drawer.Title>
                             </Drawer.Header>
                             </Center>
-                            <Drawer.Body>
-                                {pages.map((page, index) => (
-                                <Stack key={index}  backgroundColor={"gray.100"}>
-                                    <Button variant={"ghost"} >
-                                        <Link to={page}>{page}</Link>
-                                    </Button>
-                                    <Separator size={"sm"} />
-                                </Stack>
-                                ))}
-                            </Drawer.Body>
+                            <Drawer.Context>
+                                {(store) =>(
+                                    <Drawer.Body>
+                                        {pages.map((page, index) => (
+                                            <Stack key={index}  backgroundColor={"gray.100"}>
+                                                    <Button variant={"ghost"} onClick={() => store.setOpen(false)}>
+                                                        <Link to={page}>{page}</Link>
+                                                    </Button>
+                                                <Separator size={"sm"} />
+                                            </Stack>
+                                        ))}
+                                    </Drawer.Body>
+                                )}
+                            </Drawer.Context>
                             <Drawer.Footer />
                         </Drawer.Content>
                     </Drawer.Positioner>
