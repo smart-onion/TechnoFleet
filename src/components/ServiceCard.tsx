@@ -19,7 +19,7 @@ export function ServiceCard({title, description, src, alt, ...props} : ServiceCa
         <div  ref={ref}>
             {inView && (
             <MotionBox {...props}>
-                <Card.Root flexDirection={{base:"column", md:"row"}} overflow="hidden" bg={bgColors}>
+                <Card.Root flexDirection={{base:"column", md:"row"}} overflow="hidden" bg={bgColors.main}>
                     <Image
                         objectFit="cover"
                         w={{base:"full",md:"3xs"}}
