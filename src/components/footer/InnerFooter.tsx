@@ -1,22 +1,22 @@
-import {Accordion, Box, Heading, HStack, IconButton, Image, Link, Separator, Text, VStack} from "@chakra-ui/react";
+import {Accordion, Box, Heading, HStack, IconButton, Image, Separator, Text, VStack} from "@chakra-ui/react";
 import {TechnoFleetHeader} from "@/components/TechnoFleetHeader.tsx";
 import {FaInstagram, FaLinkedin, FaPhoneAlt, FaTelegramPlane} from "react-icons/fa";
 import {services} from "@/components/data/services.ts";
 import {IoMdMail} from "react-icons/io";
-
+import {Link} from "react-router"
 export function InnerFooter(){
     return(
         <>
             <Box/>
             <VStack>
                 <HStack>
-                    <Link href={"/"}>
+                    <Link to={"/"}>
                         <Image
                             src={"/technofleet.png"}
                             height={{base:"28"}}
                         />
                     </Link>
-                    <Link href={"/"}>
+                    <Link to={"/"}>
                         <TechnoFleetHeader/>
                     </Link>
                 </HStack>
@@ -52,7 +52,7 @@ export function InnerFooter(){
                                 <Accordion.ItemBody>
                                     <VStack align={{base:"center", md:"start"}} px={{base:2, md:0}}>
                                     {services.map((service, i) => (
-                                        <Link key={i} href={service}>{service}</Link>
+                                        <Link key={i} to={service}>{service}</Link>
                                     ))}
                                     </VStack>
                                 </Accordion.ItemBody>
@@ -63,15 +63,15 @@ export function InnerFooter(){
             <VStack pt={5} align={{base:"center", md:"start"}} px={{base:2, md:0}}>
                 <Heading>Company</Heading>
                 <Separator size={"lg"}/>
-                <Link href={"/about"}>About</Link>
-                <Link href={"/contacts"}>Contacts</Link>
+                <Link to={"/about"}>About</Link>
+                <Link to={"/contacts"}>Contacts</Link>
             </VStack>
             <VStack pt={5} >
                 <Heading>Contact us</Heading>
                 <Separator size={"lg"}/>
                 <HStack>
                     <IoMdMail/>
-                    <Link>info@technofleet.org</Link>
+                    <Text>info@technofleet.org</Text>
                 </HStack>
                 <HStack>
                     <FaPhoneAlt/>

@@ -1,7 +1,7 @@
 import {Box, Button, Text, Group, Heading, Image, Input, VStack} from "@chakra-ui/react";
 import {DesktopFooter} from "@/components/footer/DesktopFooter.tsx";
 import {MobileFooter} from "@/components/footer/MobileFooter.tsx";
-
+import { FaAnchor } from "react-icons/fa6";
 export function Footer(){
     return(
         <Box marginTop={{base: 60, md: 60}} position={"relative"} >
@@ -18,15 +18,15 @@ export function Footer(){
                 transform="translate(-50%, -10em)"
 
             >
-                <Image
+                <Box
                     display={{base:"block", md:"none"}}
-                    src={"/anchor.png"}
-                    height={"32"}
                     position="absolute"
                     left="50%"
-                    transform="translate(-50%, -5em)"
+                    transform="translate(-50%, -6em)"
+                >
+                    <FaAnchor size={"8em"}/>
+                </Box>
 
-                />
                 <Image
                     display={{base:"none", md:"block"}}
                     position="absolute"

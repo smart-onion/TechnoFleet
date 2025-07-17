@@ -1,15 +1,18 @@
-import { StrictMode } from 'react'
+import {StrictMode, Suspense, lazy} from 'react'
 import { createRoot } from 'react-dom/client'
 import {Provider} from "./components/ui/provider.tsx"
 import {BrowserRouter} from "react-router";
 import './index.css'
-import App from './App.tsx'
+import {Loading} from "@/components/Loading.tsx";
 
+const App = lazy(() => import("./App.tsx"))
 createRoot(document.getElementById('root')!).render(
   <StrictMode>
       <BrowserRouter>
           <Provider>
-            <App />
+              <Suspense fallback={<Loading/>}>
+                <App />
+              </Suspense>
           </Provider>
       </BrowserRouter>
   </StrictMode>,

@@ -6,9 +6,9 @@ import {Footer} from "@/components/footer/Footer.tsx";
 export function Layout(){
     return <Box >
         <Header/>
-        <Box overflowX={{base:"hidden"}}>
-        <Outlet/>
-        </Box>
+            <Box overflowX={{base:"hidden"}}>
+                <Outlet/>
+            </Box>
         <Footer/>
     </Box>
 }

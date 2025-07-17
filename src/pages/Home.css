@@ -17,14 +17,14 @@
 }
 .appear{
     animation-name: appearPhoto;
-    animation-duration: 3s;
+    animation-duration: 2s;
 }
 .goForward{
     transition-duration: 0.5s;
 }
 .homeText1{
     animation-name: appear;
-    animation-duration: 4s;
+    animation-duration: 2s;
 }
 @keyframes appearPhoto{
     from{opacity: 0;}
@@ -43,7 +43,7 @@
 }
 .inServicesView{
     animation-name: servicesView;
-    animation-duration: 2s;
+    animation-duration: 1s;
     animation-fill-mode: forwards;
 }
 
