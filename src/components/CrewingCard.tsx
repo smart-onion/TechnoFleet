@@ -1,11 +1,9 @@
 import {Box, Grid, GridItem, Heading, Image, Text} from "@chakra-ui/react";
 import {MotionBox} from "@/components/MotionBox.tsx";
 import {useInView} from "react-intersection-observer";
+import type {MotionProps} from "framer-motion";
 
-type CrewingCardProps = {
-    start?: number,
-    end?: number,
-    duration?: number,
+type CrewingCardProps = MotionProps & {
     imgPath: string,
     heading: string,
     text: string,
@@ -17,10 +15,8 @@ export function CrewingCard(
         imgPath,
         heading,
         text,
-        start = -50,
-        end = 0,
-        duration = 1,
         flip = false,
+        ...props
     }: CrewingCardProps
 ) {
     const [ref, inView] = useInView({
@@ -30,9 +26,7 @@ export function CrewingCard(
         <Box ref={ref}>
             {inView && (
             <MotionBox
-                initial={{ x: start, opacity:0 }}
-                animate={{ x: end, opacity:1}}
-                transition={{ duration:duration }}
+                {...props}
             >
                 <Grid templateColumns={{ base: "repeat(1, 1fr)", md: "repeat(2, 1fr)" }}
                       px={{base:0, md:12}}

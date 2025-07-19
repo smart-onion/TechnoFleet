@@ -6,6 +6,7 @@ import {NotFound} from "@/pages/NotFound.tsx";
 import {useEffect} from "react";
 import About from "@/pages/About.tsx";
 import Crewing from "@/pages/Crewing.tsx";
+import {Contacts} from "@/pages/Contacts.tsx";
 
 function App() {
     const pathname = useLocation();
@@ -19,6 +20,7 @@ function App() {
                     <Route path={"/"} element={<Home/>}/>
                     <Route path={"About"} element={<About/>}/>
                     <Route path={"Crewing"} element={<Crewing/>}/>
+                    <Route path={"Contacts"} element={<Contacts/>}/>
                     <Route path={"/*"} element={<NotFound/>}/>
                 </Route>
 
