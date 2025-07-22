@@ -17,7 +17,7 @@ export function ContactForm({...props}: ContactFormProps) {
     const onSubmit = async (data: ContactType) => {
         // sending data to .net server
         try {
-            const request = await fetch(basePath + "api/contactform", {
+            const request = await fetch(basePath + "api/Contact/GetMessage", {
                 method: "POST",
                 headers: {
                     "Content-Type": "application/json"
@@ -47,9 +47,9 @@ export function ContactForm({...props}: ContactFormProps) {
         <Box {...props}>
             <form onSubmit={handleSubmit(onSubmit)}>
                 {errors.root?.serverError && (
-                    <Alert.Root status="info" title="This is the alert title">
+                    <Alert.Root status="error" title="This is the alert title">
                         <Alert.Indicator/>
-                        <Alert.Title>This is the alert title</Alert.Title>
+                        <Alert.Title>{errors.root?.serverError.message}</Alert.Title>
                     </Alert.Root>
                 )}
                 <Grid templateColumns={{base: "repeat(1,1fr)", md: "repeat(2,1fr)"}} gapX={6}>

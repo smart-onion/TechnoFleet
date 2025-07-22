@@ -57,14 +57,14 @@ export default function About() {
 
             >
                 <Heading fontSize={{base: "xl", md: "2xl"}}
-                         position={"absolute"}
+                            textAlign={"center"}
                          color={textColors.main}
                 >
                     <SplitText text={"Welcome to TechnoFleet"} splitType={"words"}/>
                 </Heading>
             </Box>
             <Grid
-                mt={120}
+                mt={12}
                 templateRows={{base: "repeat(3, 1fr)", md: "repeat(3, 1fr)"}}
                 gap={6}
 

@@ -1,1 +1,1 @@
-export const basePath = 'https://localhost:5001/';
+export const basePath = 'http://localhost:5045/';

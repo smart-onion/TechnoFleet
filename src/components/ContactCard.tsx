@@ -14,7 +14,9 @@ type ContactCardProps = BoxProps & MotionProps & {
 }
 
 export function ContactCard({title, email, phone, ...props}: ContactCardProps) {
-    const [ref, inView] = useInView({});
+    const [ref, inView] = useInView({
+        triggerOnce: true,
+    });
     return (
         <>
             <MotionBox ref={ref} {...props}>

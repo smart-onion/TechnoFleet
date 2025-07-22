@@ -1,10 +1,12 @@
-import {Box, Button, Text, Group, Heading, Image, Input, VStack} from "@chakra-ui/react";
+import {Box, Text, Heading, Image, VStack} from "@chakra-ui/react";
 import {DesktopFooter} from "@/components/footer/DesktopFooter.tsx";
 import {MobileFooter} from "@/components/footer/MobileFooter.tsx";
 import {FaAnchor} from "react-icons/fa6";
 import {bgColors, textColors} from "@/theme/main-colors.ts";
+import {SubscribeForm} from "@/forms/SubscribeForm.tsx";
 
 export function Footer() {
+
     return (
         <Box marginTop={{base: 60, md: 60}} position={"relative"}>
             {/*  email subscribe box  */}
@@ -12,7 +14,7 @@ export function Footer() {
                 marginX="auto"
                 backgroundColor={bgColors.green}
                 width={{base: "full", md: "4xl"}}
-                h={{base: "2xs", md: "3xs"}}
+                h={{base: "fir", md: "3xs"}}
                 position={"absolute"}
                 p={{base: 5, md: 10}}
                 rounded={{base: "", md: "xl"}}
@@ -54,28 +56,9 @@ export function Footer() {
                     rounded={"2xl"}
                     justifyContent={{base: "center", md: "end"}}
                 >
-                    <Group attached
-                           right={0}
-                           w={"100%"}
-                           pt={4}
-                           rounded={"2xl"}
-                           justifyContent={{base: "center", md: "end"}}
-                    >
-                        <Input
-                            placeholder={"Enter your email"}
-                            w={{base: "", md: "xs"}}
-                            borderColor={textColors.main}
-                            color={textColors.main}
+                   <SubscribeForm
 
-                        />
-                        <Button colorPalette={"white"}
-                                variant="surface"
-                                bg={bgColors.main}
-                                borderColor={textColors.main}
-                        >
-                            Subscribe
-                        </Button>
-                    </Group>
+                   />
                     <Text
                         color={textColors.main}
                         fontSize={"2xs"}
