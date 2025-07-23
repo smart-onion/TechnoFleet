@@ -1,15 +1,15 @@
 :{$PORT:80} {
-  root * dist
-  encode gzip
-  file_server
+	root * dist
+	encode gzip
+	file_server
 
-  @static {
-    file
-  }
+	@static {
+		file
+	}
 
-  @notStatic {
-    not file
-  }
+	@notStatic {
+		not file
+	}
 
-  rewrite @notStatic /index.html
+	rewrite @notStatic /index.html
 }
