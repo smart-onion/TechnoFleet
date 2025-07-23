@@ -1,32 +1,40 @@
-# ---- Stage 1: Build the app ----
+# ------------------------------
+# Stage 1: Build the Vite App
+# ------------------------------
 FROM node:18-alpine AS builder
 
-# Set working directory
+# Set working directory inside container
 WORKDIR /app
 
-# Copy source code and .env file
+# Copy package files and source code
 COPY . .
+
+# Copy env variables for Vite (must be named VITE_*)
+COPY .env .env
 
 # Install dependencies
 RUN npm install
 
-# Build the Vite app (env vars injected here)
+# Build the frontend app (TypeScript + React + Vite)
 RUN npm run build
 
-# ---- Stage 2: Serve with `serve` ----
+
+# ------------------------------
+# Stage 2: Serve with `serve`
+# ------------------------------
 FROM node:18-alpine
 
-# Install `serve` globally
+# Install `serve` globally to serve static files
 RUN npm install -g serve
 
-# Set working directory
+# Set working directory for runtime
 WORKDIR /app
 
-# Copy built app from previous stage
+# Copy built output from previous stage
 COPY --from=builder /app/dist ./dist
 
-# Expose Railway port
+# Railway will expose a dynamic port (e.g. 44321, etc)
 EXPOSE 3000
 
-# Serve the static app using the Railway-provided $PORT
-CMD ["serve", "-s", "dist", "-l", "tcp:$PORT"]
+# Use shell form CMD so $PORT gets replaced correctly
+CMD serve -s dist -l tcp:$PORT
