@@ -1,7 +1,8 @@
 import type {ContactType} from "@/data/types.ts";
 import {basePath} from "@/data/api.ts";
 import {useForm} from "react-hook-form";
-import {Alert, Box, type BoxProps, Button, Field, Grid, GridItem, Input, Textarea} from "@chakra-ui/react";
+import  {Box, type BoxProps, Button, Field, Grid, GridItem, Input, Textarea} from "@chakra-ui/react";
+import {MyAlert} from "@/components/MyAlert.tsx";
 
 type ContactFormProps = BoxProps & {}
 
@@ -47,10 +48,8 @@ export function ContactForm({...props}: ContactFormProps) {
         <Box {...props}>
             <form onSubmit={handleSubmit(onSubmit)}>
                 {errors.root?.serverError && (
-                    <Alert.Root status="error" title="This is the alert title">
-                        <Alert.Indicator/>
-                        <Alert.Title>{errors.root?.serverError.message}</Alert.Title>
-                    </Alert.Root>
+                    <MyAlert title={errors.root?.serverError.type} message={errors.root?.serverError.message}
+                             status={"error"}/>
                 )}
                 <Grid templateColumns={{base: "repeat(1,1fr)", md: "repeat(2,1fr)"}} gapX={6}>
                     {/* First name */}
@@ -120,7 +119,7 @@ export function ContactForm({...props}: ContactFormProps) {
                     </GridItem>
 
                     <GridItem colSpan={{base: 1, md: 2}} px={{base: 0, md: 12}} my={2}>
-                        <Button type={"submit"} loading={isSubmitting} w={"full"} >Submit</Button>
+                        <Button type={"submit"} loading={isSubmitting} w={"full"}>Submit</Button>
                     </GridItem>
                 </Grid>
 
