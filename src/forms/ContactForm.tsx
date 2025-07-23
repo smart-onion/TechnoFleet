@@ -1,5 +1,5 @@
 import type {ContactType} from "@/data/types.ts";
-import {basePath} from "@/data/api.ts";
+import basePath from "@/data/api.ts";
 import {useForm} from "react-hook-form";
 import  {Box, type BoxProps, Button, Field, Grid, GridItem, Input, Textarea} from "@chakra-ui/react";
 import {MyAlert} from "@/components/MyAlert.tsx";

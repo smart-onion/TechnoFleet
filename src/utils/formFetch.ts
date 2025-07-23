@@ -1,4 +1,4 @@
-import {basePath} from "@/data/api.ts";
+import basePath from "@/data/api.ts";
 import type {DefaultValues, ErrorOption, KeepStateOptions} from "react-hook-form";
 
 type setError = (name: ("root" | "email" | "firstName" | "lastName" | "phone" | "subject" | "message" | `root.${string}`), error: ErrorOption, options?: {

@@ -1,6 +1,6 @@
 import {Box, type BoxProps, Button, Field, Input, Stack} from "@chakra-ui/react";
 import {useForm} from "react-hook-form";
-import {basePath} from "@/data/api.ts";
+import basePath from "@/data/api.ts";
 import {bgColors, textColors} from "@/theme/main-colors.ts";
 import {MyAlert} from "@/components/MyAlert.tsx";
 
