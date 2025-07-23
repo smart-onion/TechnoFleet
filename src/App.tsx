@@ -7,7 +7,6 @@ import {useEffect} from "react";
 import About from "@/pages/About.tsx";
 import Crewing from "@/pages/Crewing.tsx";
 import {Contacts} from "@/pages/Contacts.tsx";
-import {basePath} from "@/data/api.ts";
 
 function App() {
     const pathname = useLocation();
