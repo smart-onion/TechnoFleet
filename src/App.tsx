@@ -11,7 +11,7 @@ import {Contacts} from "@/pages/Contacts.tsx";
 function App() {
     const pathname = useLocation();
     useEffect(() => {
-        window.scrollTo({top: 0, behavior: 'smooth'});
+        window.scrollTo({top:0, behavior: 'smooth'});
     }, [pathname]);
     return (
         <>

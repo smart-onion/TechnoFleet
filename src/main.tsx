@@ -6,7 +6,6 @@ import './index.css'
 import {Loading} from "@/components/Loading.tsx";
 
 const App = lazy(() => import("./App.tsx"))
-
 createRoot(document.getElementById('root')!).render(
   <StrictMode>
       <BrowserRouter>
