@@ -5,7 +5,7 @@ import {MotionBox} from "@/components/MotionBox.tsx";
 
 type StatusType = "info" | "warning" | "success" | "error" | "neutral" | undefined;
 
-export function MyAlert({status, message, title}: { status: StatusType, message: string, title?: string | number }) {
+export function MyAlert({status, message, title}: { status: StatusType, message?: string, title?: string | number }) {
     const [showAlert, setShowAlert] = useState(true);
 
     useEffect(() => {
