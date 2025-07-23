@@ -13,6 +13,8 @@ function App() {
     useEffect(() => {
         window.scrollTo({top:0, behavior: 'smooth'});
     }, [pathname]);
+    const apiUrl = import.meta.env.VITE_MAIL_API_URL;
+    console.log("API URL:", apiUrl);
     return (
         <>
             <Routes>
