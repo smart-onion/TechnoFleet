@@ -4,11 +4,8 @@ import {Provider} from "./components/ui/provider.tsx"
 import {BrowserRouter} from "react-router";
 import './index.css'
 import {Loading} from "@/components/Loading.tsx";
-import dotenv from "dotenv";
 
 const App = lazy(() => import("./App.tsx"))
-
-dotenv.config();
 
 createRoot(document.getElementById('root')!).render(
   <StrictMode>
