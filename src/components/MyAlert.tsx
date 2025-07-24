@@ -12,7 +12,7 @@ export function MyAlert({status, message, title}: { status: StatusType, message?
         if (showAlert) {
             const timer = setTimeout(() => {
                 setShowAlert(false);
-            }, 50000); // Auto-close after 5 seconds
+            }, 5000); // Auto-close after 5 seconds
             return () => clearTimeout(timer); // Cleanup to prevent memory leaks
         }
     }, [showAlert]);
