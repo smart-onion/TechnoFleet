@@ -1,1 +1,1 @@
-export const basePath = import.meta.env.VITE_MAIL_API_URL || 'http://192.168.4.217:5045/';
+export const basePath = import.meta.env.VITE_MAIL_API_URL || 'http://localhost:5045/';
