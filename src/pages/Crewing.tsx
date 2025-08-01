@@ -1,5 +1,8 @@
-import {Box, Grid, GridItem, Heading, Image, Text} from "@chakra-ui/react";
+import {Box, Button, DownloadTrigger, Grid, GridItem, Heading, Image, Span, Text} from "@chakra-ui/react";
 import {ServiceCard} from "@/components/ServiceCard.tsx";
+import {textColors} from "@/theme/main-colors.ts";
+import {basePath} from "@/data/api.ts";
+import {FaDownload} from "react-icons/fa6";
 
 const crewingServices = [
     {
@@ -30,6 +33,10 @@ const crewingServices = [
 
 const crewingText = "At the heart of our crewing philosophy is a deep commitment to people. We believe that every seafarer deserves personal attention, professional growth, and a safe working environment. Our crewing solutions go beyond logistics — we build lasting relationships, support career development, and ensure every crew member feels valued and cared for.";
 export default function Crewing() {
+    const cv = async () => {
+        const res = await fetch(basePath + "api/crewing/downloadcv")
+        return res.blob();
+    }
     return (
         <Box>
             <Box position={"relative"}>
@@ -81,14 +88,23 @@ export default function Crewing() {
                                          duration: 1,
                                          delay: (index / 10 * 3),
                                      }}
-                                     imageSizes={{base:"", md:"xs"}}
-                                     titleFont={{base:22,md:28}}
-                                     descFont={{base:16,md:18}}
+                                     imageSizes={{base: "", md: "xs"}}
+                                     titleFont={{base: 22, md: 28}}
+                                     descFont={{base: 16, md: 18}}
                                      shadow={"xs"}
                         />
                     </GridItem>
                 ))}
             </Grid>
+            <Box w="80%" m={"auto"} mt={"12"}>
+                <Heading>Ready to apply? Download your CV and email it to <Span
+                    color={textColors.darkBlue}>crewing@technofleet.org</Span></Heading>
+                <DownloadTrigger data={cv} fileName={"cv.doc"} mimeType={"application/doc"} asChild mt={4}>
+                    <Button variant="solid">
+                        <FaDownload/> Download CV
+                    </Button>
+                </DownloadTrigger>
+            </Box>
         </Box>
     )
 }
