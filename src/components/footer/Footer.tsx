@@ -8,7 +8,7 @@ import {SubscribeForm} from "@/forms/SubscribeForm.tsx";
 export function Footer() {
 
     return (
-        <Box marginTop={{base: 60, md: 72}} position={"relative"}>
+        <Box marginTop={{base: 72, md: 72}} position={"relative"}>
             {/*  email subscribe box  */}
             <Box
                 marginX="auto"

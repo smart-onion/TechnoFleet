@@ -3,6 +3,8 @@ import {ServiceCard} from "@/components/ServiceCard.tsx";
 import {textColors} from "@/theme/main-colors.ts";
 import {basePath} from "@/data/api.ts";
 import {FaDownload} from "react-icons/fa6";
+import {MyAlert} from "@/components/MyAlert.tsx";
+import {useState} from "react";
 
 const crewingServices = [
     {
@@ -31,14 +33,35 @@ const crewingServices = [
     }
 ]
 
+type ErrorType = {
+    status: string | number,
+    message: string,
+    timestamp: number,
+}
+
 const crewingText = "At the heart of our crewing philosophy is a deep commitment to people. We believe that every seafarer deserves personal attention, professional growth, and a safe working environment. Our crewing solutions go beyond logistics — we build lasting relationships, support career development, and ensure every crew member feels valued and cared for.";
 export default function Crewing() {
+
+    const [error, setError] = useState<ErrorType>();
+
     const cv = async () => {
-        const res = await fetch(basePath + "api/crewing/downloadcv")
-        return res.blob();
+        try {
+            const res = await fetch(basePath + "api/crewing/downloadcv")
+            if (!res.ok) {
+                setError({status: res.status, message: "Some error occurred", timestamp: Date.now()});
+                throw new Error();
+            }
+            return await res.blob();
+
+        } catch {
+            setError({status: "Fetch error", message: "Some error occurred", timestamp: Date.now()});
+            throw new Error("Some error occurred while fetching crewing");
+        }
     }
+
     return (
         <Box>
+            {error && <MyAlert status={"error"} title={error.status} message={error.message} key={error.timestamp}/>}
             <Box position={"relative"}>
                 <Image
                     src={"/marine-4019745_1920.jpg"}
@@ -97,9 +120,15 @@ export default function Crewing() {
                 ))}
             </Grid>
             <Box w="80%" m={"auto"} mt={"12"}>
-                <Heading>Ready to apply? Download your CV and email it to <Span
+                <Heading fontSize={{base:18, md:22}}>Ready to apply? Download your CV and email it to <Span
                     color={textColors.darkBlue}>crewing@technofleet.org</Span></Heading>
-                <DownloadTrigger data={cv} fileName={"cv.doc"} mimeType={"application/doc"} asChild mt={4}>
+                <DownloadTrigger data={cv}
+                                 fileName={"cv.doc"}
+                                 mimeType={"application/msword"}
+                                 asChild
+                                 mt={4}
+                                 w={{base:"full", md:"auto"}}
+                >
                     <Button variant="solid">
                         <FaDownload/> Download CV
                     </Button>
