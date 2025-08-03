@@ -76,6 +76,7 @@ export default function Crewing() {
                     transform={"translate(-50%, 50%)"}
                     color={"white"}
                     fontSize={{base: 22, md: 32}}
+                    textShadow={"lg"}
                 >Innovative Crew Management with a Human Touch</Heading>
             </Box>
 

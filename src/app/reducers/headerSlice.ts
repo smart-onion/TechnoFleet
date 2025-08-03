@@ -1,7 +1,9 @@
 import {bgColors} from "@/theme/main-colors.ts";
 import type {RootState} from "@/app/store.ts";
 import {createSlice} from "@reduxjs/toolkit";
-import type {SystemProperties} from "./chakra-ui/react/dist/types/styled-system/generated/system.gen";
+// eslint-disable-next-line @typescript-eslint/ban-ts-comment
+// @ts-expect-error
+import type {SystemProperties} from "@chakra-ui/react/dist/types/styled-system/generated/system.gen";
 
 interface HeaderState  {
     props?: SystemProperties;
@@ -16,12 +18,12 @@ export const headerSlice = createSlice({
     initialState,
     reducers: {
         changeHeader: (state, action) => {
-            state.props = {...state.props, ...action.payload};
-            console.log({...state.props, ...action.payload});
+            state.props = {...action.payload};
+            console.log(state.props);
         },
     }
 })
 
 export const {changeHeader} = headerSlice.actions;
 
-export const selectHeader = (state: RootState) => state.header.bg;
+export const selectHeader = (state: RootState) => state.header.props;

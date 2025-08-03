@@ -1,50 +1,29 @@
 import {Box, Grid, GridItem, Heading, Show, Text} from "@chakra-ui/react";
 import {ServicePreviewCard} from "@/components/ServicePreviewCard.tsx";
 import {useInView} from "react-intersection-observer";
-import {useEffect, useRef} from "react";
 import {servicesDescription} from "@/data/servicesDescription.ts";
 import {Partners} from "@/components/Partners.tsx";
 import {MotionBox} from "@/components/MotionBox";
-import {bgColors, textColors} from "@/theme/main-colors.ts";
-import {useAppDispatch, useAppSelector} from "@/app/hooks.ts";
-import {changeHeader, selectHeader} from "@/app/reducers/headerSlice.ts";
+import {textColors} from "@/theme/main-colors.ts";
 
 export function Home() {
     const [servicesView, inServicesView] = useInView({
         triggerOnce: true,
     });
-    const [video, videoInView] = useInView({
-        initialInView: true,
-    });
-    const header = useAppSelector(state => state.header.props);
-    const ref = useRef<HTMLVideoElement>(null);
-    const dispatch = useAppDispatch();
-
-    useEffect(() => {
-        if (ref.current) ref.current.playbackRate = 0.5
-        if (!videoInView) {
-            dispatch(changeHeader({h: "fit"}));
-        } else {
-            dispatch(changeHeader({h: ""}));
-        }
-        console.log(header);
-    }, [dispatch, videoInView]);
 
 
     return (<>
-        <Box position={"relative"} justifyItems={"center"} colorPalette={"white"}
-             onLoad={() => dispatch(changeHeader({h: "0", bg: ""}))}>
+        <Box position={"relative"} justifyItems={"center"} colorPalette={"white"}>
 
-            <Grid ref={video} templateColumns={{base: "repeat(1,1fr)", md: "repeat(2,1fr)"}}
+            <Grid templateColumns={{base: "repeat(1,1fr)", md: "repeat(2,1fr)"}}
                   gap={6}
                   marginBottom={{base: 20, md: 40}}
                   position={"relative"}
                   width={{base: "fit", md: "full"}}
-                  h={{base: "60vh", md: "100vh"}}
+                  h={{base: "60vh", md: "95vh"}}
             >
                 {/* Background Video */}
                 <video
-                    ref={ref}
                     autoPlay
                     loop
                     muted
@@ -67,15 +46,15 @@ export function Home() {
                 </video>
 
                 <GridItem colSpan={1} maxW={{base: "fit", md: "fit"}} zIndex={1}>
-                    <Box paddingX={10} paddingTop={{base: 24, md: 200}} height={"full"}
+                    <Box paddingX={{base: 12, md: 36}} paddingTop={{base: 24, md: 200}} height={"full"}
                          className={"homeText1"}>
                         <Heading size={{base: "4xl", md: "7xl"}} color={textColors.reverseMain} textShadow={"2xl"}>
                             Your Global Partner in Maritime Crewing</Heading>
                         <Text width={{base: "xs", md: "2xl"}}
-                              fontSize={"2xl"}
+                              fontSize={{base: "xl", md: "2xl"}}
                               marginTop={"2em"}
                               color={textColors.reverseMain}
-                              textShadow={"md"}
+                              textShadow={"xl"}
                         >
                             Connecting top-tier seafarers with leading
                             shipping companies across the world — efficiently,
