@@ -4,6 +4,7 @@ import {useInView} from "react-intersection-observer";
 import {useState} from "react";
 import {servicesDescription} from "@/data/servicesDescription.ts";
 import "./Home.css"
+import {Partners} from "@/components/Partners.tsx";
 
 
 
@@ -71,6 +72,7 @@ export function Home() {
                         />
                     </Box>
                 </GridItem>
+
             </Grid
             >
 
@@ -107,6 +109,9 @@ export function Home() {
                         />
                     </GridItem>
                 ))}
+                <GridItem colSpan={{base: 1, md: 6}}>
+                    <Partners mt={{base: 12, md: 24}}/>
+                </GridItem>
             </Grid>
         </Box>
     </>)
