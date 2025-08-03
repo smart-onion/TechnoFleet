@@ -4,6 +4,7 @@ export const bgColors = {
 }
 export const textColors = {
     main:{base: "gray.800", _dark: "gray.100"},
+    reverseMain:{base: "gray.100", _dark: "gray.800"},
     darkBlue:{
         base: "blue.700",
         _dark: "blue.600",
