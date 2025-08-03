@@ -1,4 +1,3 @@
-import {bgColors} from "@/theme/main-colors.ts";
 import type {RootState} from "@/app/store.ts";
 import {createSlice} from "@reduxjs/toolkit";
 // eslint-disable-next-line @typescript-eslint/ban-ts-comment
@@ -10,7 +9,7 @@ interface HeaderState  {
 }
 
 const initialState: HeaderState = {
-    props: {h:"fit", bg: bgColors.main},
+    props: null
 }
 
 export const headerSlice = createSlice({
@@ -19,7 +18,6 @@ export const headerSlice = createSlice({
     reducers: {
         changeHeader: (state, action) => {
             state.props = {...action.payload};
-            console.log(state.props);
         },
     }
 })

@@ -1,10 +1,11 @@
-import {Box, Grid, GridItem, Heading, Show, Text} from "@chakra-ui/react";
+import {Box, Grid, GridItem, Heading, HStack, Separator, Show, Text} from "@chakra-ui/react";
 import {ServicePreviewCard} from "@/components/ServicePreviewCard.tsx";
 import {useInView} from "react-intersection-observer";
 import {servicesDescription} from "@/data/servicesDescription.ts";
 import {Partners} from "@/components/Partners.tsx";
 import {MotionBox} from "@/components/MotionBox";
 import {textColors} from "@/theme/main-colors.ts";
+import ShinyText from "@/animation/ShinyText.tsx";
 
 export function Home() {
     const [servicesView, inServicesView] = useInView({
@@ -13,11 +14,11 @@ export function Home() {
 
 
     return (<>
-        <Box position={"relative"} justifyItems={"center"} colorPalette={"white"}>
+        <Box position={"relative"} top={0} justifyItems={"center"} colorPalette={"white"}>
 
             <Grid templateColumns={{base: "repeat(1,1fr)", md: "repeat(2,1fr)"}}
                   gap={6}
-                  marginBottom={{base: 20, md: 40}}
+                  marginBottom={{base: 0, md: 0}}
                   position={"relative"}
                   width={{base: "fit", md: "full"}}
                   h={{base: "60vh", md: "95vh"}}
@@ -70,7 +71,7 @@ export function Home() {
             <Grid ref={servicesView}
                   templateColumns={{base: "repeat(1,1fr)", md: "repeat(6,1fr)"}}
                   gap={6}
-                  marginTop={{base: 0, md: 32}}
+                  marginTop={{base: 0, md: 24}}
             >
                 <GridItem colSpan={{base: 1, md: 6}}>
                     <Show when={inServicesView}>
@@ -79,6 +80,12 @@ export function Home() {
                             animate={{opacity: 1, y: 0}}
                             transition={{duration: 1}}
                         >
+                            <HStack w={{base:"xs", md: "lg"}} m={"auto"} my={12} >
+                            <Separator flex={1} size={"lg"}/>
+                                <ShinyText size={{base:"lg",md:"2xl"}} text={"OUR SERVICES"} />
+                                    <Separator flex={1} size={"lg"}/>
+                            </HStack>
+
                             <Heading textAlign={"center"} size={{base: "2xl", md: "6xl"}} marginBottom={"2%"}>Our
                                 Services
                                 at a

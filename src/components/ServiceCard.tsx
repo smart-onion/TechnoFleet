@@ -1,9 +1,10 @@
-import {Card, Box, Image, type BoxProps} from "@chakra-ui/react";
+import {Card, Box, type BoxProps} from "@chakra-ui/react";
 import {MotionBox} from "@/components/MotionBox.tsx";
 import {useInView} from "react-intersection-observer";
 import type {MotionProps} from "framer-motion";
 import {bgColors, textColors} from "@/theme/main-colors.ts";
 import type {ResponsiveType} from "@/data/types.ts";
+import {ProgressiveImage} from "@/components/ProgressiveImage.tsx";
 
 type ServiceCardProps = Omit<BoxProps, "animation"> & MotionProps & {
     title: string,
@@ -36,7 +37,7 @@ export function ServiceCard({
                 <MotionBox {...props}>
                     <Card.Root flexDirection={{base: "column", md: (reverse ? "row-reverse" : "row")}} overflow="hidden"
                                bg={bgColors.main}>
-                        <Image
+                        <ProgressiveImage
                             objectFit="cover"
                             w={imageSizes || {base: "full", md: "3xs"}}
                             src={src}

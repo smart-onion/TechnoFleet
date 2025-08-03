@@ -7,19 +7,11 @@ import {useEffect} from "react";
 import About from "@/pages/About.tsx";
 import Crewing from "@/pages/Crewing.tsx";
 import {Contacts} from "@/pages/Contacts.tsx";
-import {useAppDispatch} from "@/app/hooks.ts";
-import {changeHeader} from "@/app/reducers/headerSlice.ts";
-import {bgColors} from "@/theme/main-colors.ts";
 
-function App() {
+export default function App() {
     const pathname = useLocation();
-    const dispatch = useAppDispatch();
     useEffect(() => {
         window.scrollTo({top:0, behavior: 'smooth'});
-        console.log(pathname.pathname);
-        if(pathname.pathname !== "/home"){
-            dispatch(changeHeader({height: "fit", bg: bgColors.main}));
-        }
     }, [pathname.pathname]);
 
     return (
@@ -38,4 +30,3 @@ function App() {
     );
 }
 
-export default App

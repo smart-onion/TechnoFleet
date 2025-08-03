@@ -1,6 +1,7 @@
 export const bgColors = {
     main:{base: "gray.100", _dark: "gray.900"},
     green:{base: "green.200", _dark: "green.600"},
+    header:{base: "whiteAlpha.700", _dark: "blackAlpha.700"},
 }
 export const textColors = {
     main:{base: "gray.800", _dark: "gray.100"},
@@ -13,5 +14,7 @@ export const textColors = {
         base: "blue.300",
         _dark: "blue.400",
     }
-
+}
+export const gradientColors = {
+    main:{base: "gray.800", _dark: "gray.600"},
 }
