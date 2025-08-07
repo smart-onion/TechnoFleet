@@ -1,7 +1,8 @@
-import {Box, Grid, Heading, Image} from "@chakra-ui/react";
+import {Box, Grid, Heading} from "@chakra-ui/react";
 import SplitText from "@/animation/SplitText.tsx";
 import {textColors} from "@/theme/main-colors.ts";
 import {ServiceCard} from "@/components/ServiceCard.tsx";
+import {ProgressiveImage} from "@/components/ProgressiveImage.tsx";
 
 const aboutData = [
     {
@@ -34,7 +35,7 @@ export default function About() {
             <Box position={"relative"}
 
             >
-                <Image
+                <ProgressiveImage
                     filter={"brightness(50%) saturate(140%)"}
                     src={"/ship-photos/ship-sunset.jpg"}
                     w={"100%"}

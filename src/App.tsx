@@ -8,12 +8,12 @@ import About from "@/pages/About.tsx";
 import Crewing from "@/pages/Crewing.tsx";
 import {Contacts} from "@/pages/Contacts.tsx";
 
-function App() {
+export default function App() {
     const pathname = useLocation();
     useEffect(() => {
         window.scrollTo({top:0, behavior: 'smooth'});
-    }, [pathname]);
-    console.log(import.meta.env.VITE_MAIL_API_URL);
+    }, [pathname.pathname]);
+
     return (
         <>
             <Routes>
@@ -30,4 +30,3 @@ function App() {
     );
 }
 
-export default App

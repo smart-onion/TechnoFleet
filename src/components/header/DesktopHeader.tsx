@@ -72,7 +72,6 @@ export function DesktopHeader({services}: {services: string[]}) {
             <ColorModeButton/>
         </HStack>
 
-        <Separator size={"lg"}/>
     </Box>
 )
 }

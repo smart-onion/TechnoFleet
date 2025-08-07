@@ -64,7 +64,6 @@ export function MobileHeader({pages}: {pages: string[]}) {
                     <Image src={"/technofleet.png"} height={"20"}/>
                 </HStack>
             </HStack>
-            <Separator size={"sm"}/>
         </Box>
     )
 }
