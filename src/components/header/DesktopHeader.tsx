@@ -13,7 +13,7 @@ export function DesktopHeader({services}: {services: string[]}) {
         <HStack margin={"auto"} align={"center"} px={40}>
             <NavLink to={"/"}>
                 <HStack width={"xs"}>
-                    <Image src="/technofleet.svg" width={20} />
+                    <Image src="/new_without_outline.svg" width={20} p={1} />
                     <TechnoFleetHeader size={"2xl"}/>
                 </HStack>
             </NavLink>

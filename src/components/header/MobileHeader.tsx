@@ -61,7 +61,7 @@ export function MobileHeader({pages}: {pages: string[]}) {
                         <Link to={"/"}>
                             <TechnoFleetHeader size={"xl"}/>
                         </Link>
-                    <Image src={"/technofleet.png"} height={"20"}/>
+                    <Image src={"/new_without_outline.svg"} height={"20"} p={2}/>
                 </HStack>
             </HStack>
         </Box>
