@@ -12,8 +12,9 @@ export function InnerFooter() {
                 <HStack>
                     <Link to={"/"}>
                         <Image
-                            src={"/technofleet.png"}
+                            src={"/new_without_outline.svg"}
                             height={{base: "28"}}
+                            p={2}
                         />
                     </Link>
                     <Link to={"/"}>
