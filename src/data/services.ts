@@ -1,6 +1,7 @@
 export const services = [
     "Crewing",
-    // "Certificates",
+    "Certificates",
+    // "Medicine",
     // "Supply",
     // "Insurance",
     // "IT Service",

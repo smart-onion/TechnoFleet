@@ -4,7 +4,7 @@ import type {IconBaseProps} from "react-icons";
 import {MotionBox} from "@/components/MotionBox.tsx";
 import {useInView} from "react-intersection-observer";
 
-export function ServicePreviewCard({MyIcon, heading, text}:{MyIcon:ComponentType<IconBaseProps>; heading:string, text:string}) {
+export function ServicePreviewCard({MyIcon, heading, text}:{MyIcon:ComponentType<IconBaseProps>; heading?:string, text?:string}) {
     const [ref, inView] = useInView({
         triggerOnce: true,
     });
