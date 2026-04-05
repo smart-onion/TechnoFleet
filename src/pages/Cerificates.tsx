@@ -16,7 +16,7 @@ export const Cerificates = () => {
             <Image
                 src={"/training-certificates.jpg"}
                 w={"full"}
-                height={60}
+                height={{base:52, md: 80}}
                 filter={"brightness(35%)"}
                 fit={"fill"}
             />

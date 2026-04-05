@@ -11,6 +11,12 @@ const aboutData = [
         description: "Ready to sail? We connect seafarers with top global employers, matching your skills to\n" +
             "the perfect role. From deckhands to captains, our network opens doors to exciting opportunities.\n" +
             "Join \"TechnoFleet\" today adn navigate your path to success."
+    },{
+        src: "/jarmoluk-document-428331_1920.jpg",
+        title: "Comprehensive Maritime Documentation Services",
+        description: "From STCW certifications and specialized gas tanker training to medical clearances " +
+            "and diploma renewals, we provide a full suite of services to keep your maritime " +
+            "career on course and compliant with international standards."
     },
     {
         src: "/ship-photos/container-terminal.jpg",

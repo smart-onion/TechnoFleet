@@ -6,7 +6,7 @@ const contactData = [
     {
         title: "For Seafarers",
         email: "crewing@technofleet.org",
-        phone: "+(380) 63 357 15 52"
+        phone: "+40 734 174 773"
     },
     {
         title: "For Shipowners/Clients",
@@ -16,7 +16,7 @@ const contactData = [
     {
         title: "Need help?",
         email: "support@technofleet.org",
-        phone: "+(380) 63 357 15 52"
+        phone: "+40 734 174 773"
     }
 ]
 

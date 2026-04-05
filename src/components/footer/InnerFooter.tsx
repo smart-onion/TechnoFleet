@@ -76,7 +76,7 @@ export function InnerFooter() {
                 </HStack>
                 <HStack>
                     <FaPhoneAlt/>
-                    <Text>+(380) 63 357 15 52</Text>
+                    <Text>+40 734 174 773</Text>
                 </HStack>
             </VStack></>
     )
