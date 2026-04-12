@@ -62,7 +62,7 @@ export function Footer() {
                     <Text
                         color={textColors.main}
                         fontSize={"2xs"}
-                        pt={5}
+                        pt={1}
                     >
                         You will be able to unsubscribe at any time.
                     </Text>

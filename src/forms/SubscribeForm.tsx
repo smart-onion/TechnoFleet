@@ -3,9 +3,11 @@ import {useForm} from "react-hook-form";
 import {basePath} from "@/data/api.ts";
 import {bgColors, textColors} from "@/theme/main-colors.ts";
 import {MyAlert} from "@/components/MyAlert.tsx";
+import {BrevoClient} from "@getbrevo/brevo";
 
 type SubscribeFormType = {
-    email: string
+    email: string,
+    fullName: string,
 }
 
 export function SubscribeForm({...props}: BoxProps) {
@@ -17,9 +19,29 @@ export function SubscribeForm({...props}: BoxProps) {
         setError
     } = useForm<SubscribeFormType>();
 
+    const brevoCall = async (data: SubscribeFormType) => {
+        const client = new BrevoClient({
+            apiKey: import.meta.env.VITE_BREVO_API_KEY,
+        })
+        const names = data.fullName.split(" ");
+        await client.contacts.createDoiContact({
+            email: data.email,
+            templateId: 6,
+            includeListIds: [6],
+            redirectionUrl: "https://technofleet.org",
+            attributes: {
+                "LASTNAME": names[1] ?? "",
+                "FIRSTNAME": names[0],
+            },
+        })
+    }
     const onSubmit = async (data: SubscribeFormType) => {
-        // sending data to .net server
+        await brevoCall(data);
+        //sending data to .net server
         try {
+
+
+
             const request = await fetch(basePath + "api/subscriber/subscribe", {
                 method: "POST",
                 headers: {
@@ -47,14 +69,21 @@ export function SubscribeForm({...props}: BoxProps) {
     }
 
     return (
-        <Box {...props} justifyItems="end" w={{base:"80%",md:"100%"}}>
+        <Box {...props} justifyItems="center" w={{base:"80%",md:"100%"}}>
             <form onSubmit={handleSubmit(onSubmit)}>
                 {errors.root?.serverError && (
                    <MyAlert status={"error"} message={`${errors.root?.serverError.message}`}/>
                 )}
                 {/* Email  */}
-                <Stack direction={{base: "column", md: "row"}} w={{base: "full", md: "md"}}>
+                <Stack direction={{base: "column", md: "row"}} align={{base: "none", md: "end"}}  w={{base: "full", md: "md"}}>
                     <Field.Root invalid={!!errors.email} _focus={{transform: "none"}}>
+                        <Input
+                            _placeholder={{color: textColors.main}}
+                            borderColor={textColors.main}
+                            placeholder={"Full Name"}
+                            {...register("fullName", {
+                                required: "Name is required",
+                            })} />
                         <Input
                             _placeholder={{color: textColors.main}}
                             borderColor={textColors.main}
