@@ -66,6 +66,7 @@ export function InnerFooter() {
                 <Separator size={"lg"}/>
                 <Link to={"/about"}>About</Link>
                 <Link to={"/contacts"}>Contacts</Link>
+                <Link to={"/term-and-privacy"}>Term of Use</Link>
             </VStack>
             <VStack pt={5}>
                 <Heading>Contact us</Heading>

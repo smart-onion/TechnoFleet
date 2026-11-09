@@ -26,7 +26,7 @@ export function DesktopFooter(props?: BoxProps) {
             </HStack>
             <Separator size={"lg"}/>
             <HStack px={"60"} justify={"space-between"}>
-                <Link href={"/Privacy"}>© 2025-TechnoFleet <Span color={"blue"}>Privacy</Span></Link>
+                <Link href={"/term-and-privacy"}>© 2025-TechnoFleet <Span color={"blue"}>Privacy</Span></Link>
             </HStack>
         </Box>
     )
