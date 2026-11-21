@@ -39,10 +39,7 @@ export function SubscribeForm({...props}: BoxProps) {
         await brevoCall(data);
         //sending data to .net server
         try {
-
-
-
-            const request = await fetch(basePath + "api/subscriber/subscribe", {
+            const request = await fetch(import.meta.env.VITE_SUBSCRIBE_URL, {
                 method: "POST",
                 headers: {
                     "Content-Type": "application/json"
