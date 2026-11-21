@@ -9,6 +9,7 @@ import Crewing from "@/pages/Crewing.tsx";
 import {Contacts} from "@/pages/Contacts.tsx";
 import {Cerificates} from "@/pages/Cerificates.tsx";
 import {Subscribe} from "@/pages/Subscribe.tsx";
+import {TermsAndPrivacy} from "@/pages/TermsAndPrivacy.tsx";
 
 export default function App() {
     const pathname = useLocation();
@@ -26,6 +27,7 @@ export default function App() {
                     <Route path={"Certificates"} element={<Cerificates/>}/>
                     <Route path={"Contacts"} element={<Contacts/>}/>
                     <Route path={"subscribe"} element={<Subscribe/>}/>
+                    <Route path={"term-and-privacy"} element={<TermsAndPrivacy/>}/>
                     <Route path={"/*"} element={<NotFound/>}/>
                 </Route>
 

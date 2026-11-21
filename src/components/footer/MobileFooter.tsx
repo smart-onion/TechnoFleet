@@ -8,7 +8,7 @@ export function MobileFooter({...props}: StackProps) {
             <InnerFooter/>
             <Separator size={"lg"}/>
             <VStack>
-                <Link href={"/Privacy"}>© 2025-TechnoFleet Privacy</Link>
+                <Link href={"/term-and-privacy?tab=privacy"}>© 2025-TechnoFleet Privacy</Link>
             </VStack>
         </VStack>
     )
