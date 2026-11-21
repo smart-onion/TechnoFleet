@@ -3,7 +3,7 @@ import {
     GridItem, Heading,
      Tabs, Text, List, Box,useBreakpointValue
 } from "@chakra-ui/react";
-import type {CSSProperties, ReactNode} from "react";
+import type {CSSProperties} from "react";
 import { useSearchParams } from "react-router";
 const segmentItems = [
     {
@@ -768,7 +768,7 @@ export const TermsAndPrivacy = () => {
                         <br/>
                         <Heading size={"xl"} >Personal information you disclose to us</Heading>
 
-                        <Text style={{textStyles, fontStyle: "italic", margin: "10px 0"}}>
+                        <Text style={{...textStyles, fontStyle: "italic", margin: "10px 0"}}>
                             <b style={{fontStyle: "italic"}}>In Short:</b> We collect personal information that you provide to us.
                         </Text>
                         <Text style={textStyles}>
@@ -789,7 +789,7 @@ export const TermsAndPrivacy = () => {
                         </Text>
                         <br/>
                         <Heading size={"xl"} >Information automatically collected</Heading>
-                        <Text style={{textStyles, fontStyle: "italic", margin: "10px 0"}}>
+                        <Text style={{...textStyles, fontStyle: "italic", margin: "10px 0"}}>
                             <b style={{fontStyle: "italic"}}>In Short:</b>  Some information — such as your Internet Protocol (IP) address
                             and/or browser and device characteristics — is collected automatically
                             when you visit our Services.
@@ -812,7 +812,7 @@ export const TermsAndPrivacy = () => {
                         <br/>
 
                         <Heading size={"3xl"} id={"policy2"}>2. HOW DO WE PROCESS YOUR INFORMATION?</Heading>
-                        <Text style={{textStyles, fontStyle: "italic", margin: "10px 0"}}>
+                        <Text style={{...textStyles, fontStyle: "italic", margin: "10px 0"}}>
                             <b style={{fontStyle: "italic"}}>In Short:</b>  We process your information to provide, improve, and administer
                             our Services, communicate with you, for security and fraud prevention, and
                             to comply with law. We may also process your information for other
@@ -826,7 +826,7 @@ export const TermsAndPrivacy = () => {
                         <Heading size={"3xl"} id={"policy3"}>3. WHEN AND WITH WHOM DO WE SHARE YOUR
                             PERSONAL INFORMATION?</Heading>
                         <br/>
-                        <Text style={{textStyles, fontStyle: "italic", margin: "10px 0"}}>
+                        <Text style={{...textStyles, fontStyle: "italic", margin: "10px 0"}}>
                             <b style={{fontStyle: "italic"}}>In Short:</b>  We may share information in specific situations described in this
                             section and/or with the following third parties.
                         </Text>
@@ -856,7 +856,7 @@ export const TermsAndPrivacy = () => {
                         <br/>
                         <Heading size={"3xl"} id={"policy4"}>4. DO WE USE COOKIES AND OTHER TRACKING
                             TECHNOLOGIES?</Heading>
-                        <Text style={{textStyles, fontStyle: "italic", margin: "10px 0"}}>
+                        <Text style={{...textStyles, fontStyle: "italic", margin: "10px 0"}}>
                             <b style={{fontStyle: "italic"}}>In Short:</b>  We may use cookies and other tracking technologies to collect
                             and store your information.
                         </Text>
@@ -882,7 +882,7 @@ export const TermsAndPrivacy = () => {
                         <br/>
 
                         <Heading size={"3xl"} id={"policy5"}>5. HOW DO WE HANDLE YOUR SOCIAL LOGINS?</Heading>
-                        <Text style={{textStyles, fontStyle: "italic", margin: "10px 0"}}>
+                        <Text style={{...textStyles, fontStyle: "italic", margin: "10px 0"}}>
                             <b style={{fontStyle: "italic"}}>In Short:</b> If you choose to register or log in to our Services using a social
                             media account, we may have access to certain information about you.
                         </Text>
@@ -907,7 +907,7 @@ export const TermsAndPrivacy = () => {
                         <br/>
                         <Heading size={"3xl"} id={"policy6"}>6. IS YOUR INFORMATION TRANSFERRED
                             INTERNATIONALLY?</Heading>
-                        <Text style={{textStyles, fontStyle: "italic", margin: "10px 0"}}>
+                        <Text style={{...textStyles, fontStyle: "italic", margin: "10px 0"}}>
                             <b style={{fontStyle: "italic"}}>In Short:</b> We may transfer, store, and process your information in countries
                             other than your own.
                         </Text>
@@ -929,7 +929,7 @@ export const TermsAndPrivacy = () => {
                         </Text>
                         <br/>
                         <Heading size={"3xl"} id={"policy7"}>7. HOW LONG DO WE KEEP YOUR INFORMATION?</Heading>
-                        <Text style={{textStyles, fontStyle: "italic", margin: "10px 0"}}>
+                        <Text style={{...textStyles, fontStyle: "italic", margin: "10px 0"}}>
                             <b style={{fontStyle: "italic"}}>In Short:</b>  We keep your information for as long as necessary to fulfill the
                             purposes outlined in this Privacy Notice unless otherwise required by law.
                         </Text>
@@ -950,7 +950,7 @@ export const TermsAndPrivacy = () => {
                         <br/>
                         <Heading size={"3xl"} id={"policy8"}>8. DO WE COLLECT INFORMATION FROM
                             MINORS?</Heading>
-                        <Text style={{textStyles, fontStyle: "italic", margin: "10px 0"}}>
+                        <Text style={{...textStyles, fontStyle: "italic", margin: "10px 0"}}>
                             <b style={{fontStyle: "italic"}}>In Short:</b> We do not knowingly collect data from or market to children
                             under 18 years of age.
                         </Text>
@@ -967,7 +967,7 @@ export const TermsAndPrivacy = () => {
                         </Text>
                         <br/>
                         <Heading size={"3xl"} id={"policy9"}>9. WHAT ARE YOUR PRIVACY RIGHTS?</Heading>
-                        <Text style={{textStyles, fontStyle: "italic", margin: "10px 0"}}>
+                        <Text style={{...textStyles, fontStyle: "italic", margin: "10px 0"}}>
                             <b style={{fontStyle: "italic"}}>In Short:</b>  You may review, change, or terminate your account at any time,
                             depending on your country, province, or state of residence.
                         </Text>
@@ -1013,7 +1013,7 @@ export const TermsAndPrivacy = () => {
                             revised version of this Privacy Notice.
                         </Text>
                         <Heading size={"3xl"} id={"policy11"}>11. DO WE MAKE UPDATES TO THIS NOTICE?</Heading>
-                        <Text style={{textStyles, fontStyle: "italic", margin: "10px 0"}}>
+                        <Text style={{...textStyles, fontStyle: "italic", margin: "10px 0"}}>
                             <b style={{fontStyle: "italic"}}>In Short:</b>Yes, we will update this notice as necessary to stay compliant
                             with relevant laws.
                         </Text>
